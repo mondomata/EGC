@@ -2,11 +2,11 @@
 
 Hiánypótló weboldal: 
 
-Egységes Országos Vetületi Rendszer (EOV), 
+**E**gységes Országos Vetületi Rendszer (EOV), 
 
-GPS rendszer, valamint 
+**G**PS rendszer, valamint 
 
-Cím keresést 
+**C**ím keresést 
 
 tesz lehetővé, térképi támogatással, automatikus EOV/GPS konverzióval.
 
