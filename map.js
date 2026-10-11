@@ -178,7 +178,7 @@ async function pasteFromGoogle() {
         parseAndProcess(text);
     } catch (err) {
         // Ha a böngésző blokkolja a vágólapot, felugrik a beépített böngésző ablak
-        const manualText = prompt("A böngésződ blokkolja a vágólapot! Sebaj!\n Nyomj Ctrl + V -t, majd OK és kész vagy :-)");
+        const manualText = prompt("A böngésződ blokkolja a vágólapot! Sebaj!\n Nyomj 𝗖𝘁𝗿𝗹 + 𝗩-t, majd OK és kész vagy :-)");
         if (manualText) {
             parseAndProcess(manualText);
         }
