@@ -168,7 +168,7 @@ function openInGoogleMaps() {
         googleWindow = null;
     }, 15000);
 
-    showNotification('&#9757; Kattints a kis térképen <i>jobb-gombbal</i> a &#128205; gombostű hegyén + GPS koordinátán (másolás), majd kattints a <span style="background:#28a745;color:white;padding:2px 4px;border-radius:3px;">GPS beilleszt</span>-re');
+    showNotification('&#9757; Kattints a kis térképen <i>jobb-gombbal</i> a &#128205; gombostűn + GPS koordinátán (másolás), majd kattints a <span style="background:#28a745;color:white;padding:2px 4px;border-radius:3px;">GPS beilleszt</span>-re');
 }
 
 // Vágólap beillesztés automatikus kiolvasással vagy egyszerű böngésző prompt-tal
