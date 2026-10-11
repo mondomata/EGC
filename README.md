@@ -1,9 +1,16 @@
-## EGC-kordi
+## EGC
 
-Hiánypótló weboldal: Egységes Országos Vetületi Rendszer (EOV), GPS rendszer, valamint Cím keresést 
+Hiánypótló weboldal: 
+
+Egységes Országos Vetületi Rendszer (EOV), 
+
+GPS rendszer, valamint 
+
+Cím keresést 
+
 tesz lehetővé, térképi támogatással, automatikus EOV/GPS konverzióval.
 
-1. A címkeresés a házszám pontosság érdekeben Google térképpel működik.
+1. A címkeresés a házszám szintű (1-2 m.) pontosság érdekeben Google térképpel működik.
 2. PC-n a google GPS koordináták gyorsan átmásolhatók az EGC-be.
 3. Az EGC az OpenStreetMapon mutatja a pozíciót, azonnal konvertálja és kiírja az adatokat EOV és GPS paraméterekkel.
 4. Választható rétegek az OSM mellett: topográfiai térkép, műhold térkép.
