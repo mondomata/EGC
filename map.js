@@ -154,7 +154,7 @@ function openInGoogleMaps() {
 
     const width = 600;
     const height = 600;
-    const left = window.screen.width - width - 300;
+    const left = window.screen.width - width - 500;
     const top = 200;
 
     googleWindow = window.open(
