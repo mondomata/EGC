@@ -171,14 +171,6 @@ function openInGoogleMaps() {
     showNotification('&#9757; Kattints a kis térképen <i>jobb-gombbal</i> a &#128205; gombostűn + GPS koordinátán (másolás), majd kattints a <span style="background:#28a745;color:white;padding:2px 4px;border-radius:3px;">GPS beilleszt</span>-re');
 }
 
-// Vágólap kiolvasása, feldolgozás
-async function pasteFromGoogle() {
-// --- Google Térkép Integrációs Funkciók ---
-
-function openInGoogleMaps() {
-    // ... (ez marad a régiben)
-}
-
 // Vágólap beillesztés automatikus kiolvasással vagy egyszerű böngésző prompt-tal
 async function pasteFromGoogle() {
     try {
