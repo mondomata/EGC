@@ -178,7 +178,7 @@ async function pasteFromGoogle() {
         parseAndProcess(text);
     } catch (err) {
         // Ha a böngésző blokkolja a vágólapot, felugrik a beépített böngésző ablak
-        const manualText = prompt("A böngésző blokkolja a közvetlen beillesztést.\nKattints a mezőbe, nyomj Ctrl + V-t, majd kattints az OK gombra:");
+        const manualText = prompt("A böngésződ blokkolja a vágólapot! Sebaj!\n Nyomj <b>Ctrl + V</b> -t, majd [<b>OK</b>] és kész!");
         if (manualText) {
             parseAndProcess(manualText);
         }
@@ -206,9 +206,9 @@ function parseAndProcess(text) {
         clearTimeout(googleWindowTimer);
         googleWindow = null;
 
-        showNotification('GPS koordináta sikeresen beillesztve! A Google ablakot bezárhatod.');
+        showNotification('GPS beillesztve. (A kisablakot bezárhatod.)');
     } else {
-        showNotification('Nincs felismerhető GPS koordináta a megadott szövegben.');
+        showNotification('Nincs felismerhető GPS koordináta.');
     }
 }
 
