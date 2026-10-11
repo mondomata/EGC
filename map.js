@@ -173,38 +173,53 @@ function openInGoogleMaps() {
 
 // Vágólap kiolvasása, feldolgozás
 async function pasteFromGoogle() {
+// --- Google Térkép Integrációs Funkciók ---
+
+function openInGoogleMaps() {
+    // ... (ez marad a régiben)
+}
+
+// Vágólap beillesztés automatikus kiolvasással vagy egyszerű böngésző prompt-tal
+async function pasteFromGoogle() {
     try {
         const text = await navigator.clipboard.readText();
-        const match = text.match(/(-?\d+\.\d+)[\s,]+(-?\d+\.\d+)/);
-
-        if (match) {
-            const lat = parseFloat(match[1]);
-            const lng = parseFloat(match[2]);
-
-            if (currentMode !== 'GPS') {
-                toggleSearchMode();
-            }
-
-            document.getElementById('latCoord').value = lat;
-            document.getElementById('lngCoord').value = lng;
-
-            const addressText = document.getElementById('googleAddressInput').value || 'Google Maps Pont';
-            processGps(lat, lng, addressText);
-
-            clearTimeout(googleWindowTimer);
-            googleWindow = null;
-
-            // A böngésző biztonsági korlátai miatt a külső Google ablak nem zárható be programozottan,
-            // így a felhasználót kérjük meg a bezárására.
-            showNotification('GPS koordináta sikeresen beillesztve! A Google ablakot bezárhatod.');
-        } else {
-            showNotification('Nincs felismerhető GPS koordináta a vágólapon.');
-        }
+        parseAndProcess(text);
     } catch (err) {
-        console.error('Vágólap elrési hiba:', err);
-        showNotification('&#9757; Nincs engedély a vágólaphoz a böngészőben!');
+        // Ha a böngésző blokkolja a vágólapot, felugrik a beépített böngésző ablak
+        const manualText = prompt("A böngésző blokkolja a közvetlen beillesztést.\nKattints a mezőbe, nyomj Ctrl + V-t, majd kattints az OK gombra:");
+        if (manualText) {
+            parseAndProcess(manualText);
+        }
     }
 }
+
+// Koordináta kiszűrése és feldolgozása
+function parseAndProcess(text) {
+    const match = text ? text.match(/(-?\d+\.\d+)[\s,]+(-?\d+\.\d+)/) : null;
+    
+    if (match) {
+        const lat = parseFloat(match[1]);
+        const lng = parseFloat(match[2]);
+        
+        if (currentMode !== 'GPS') {
+            toggleSearchMode();
+        }
+        
+        document.getElementById('latCoord').value = lat;
+        document.getElementById('lngCoord').value = lng;
+        
+        const addressText = document.getElementById('googleAddressInput').value || 'Google Maps Pont';
+        processGps(lat, lng, addressText);
+        
+        clearTimeout(googleWindowTimer);
+        googleWindow = null;
+
+        showNotification('GPS koordináta sikeresen beillesztve! A Google ablakot bezárhatod.');
+    } else {
+        showNotification('Nincs felismerhető GPS koordináta a megadott szövegben.');
+    }
+}
+
 
 function displayOnMap(lat, lng, y, x, label) {
     if (currentMarker) map.removeLayer(currentMarker);
