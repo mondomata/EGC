@@ -153,7 +153,7 @@ function openInGoogleMaps() {
     const googleUrl = `https://www.google.com/maps?q=${encodeURIComponent(query)}`;
 
     const width = 600;
-    const height = 600;
+    const height = 400;
     const left = window.screen.width - width - 500;
     const top = 200;
 
